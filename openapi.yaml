@@ -1,0 +1,86 @@
+openapi: 3.0.0
+info:
+  title: Gestión de Préstamos
+  version: 1.0.0
+  description: API que gestiona el scoring y generación de contratos para préstamos.
+
+servers:
+  - url: http://127.0.0.1:8000
+    description: Servidor de Autenticación
+  - url: http://127.0.0.1:8001
+    description: Servidor de Scoring
+  - url: http://localhost:8002
+    description: Servidor de Generación de Contratos
+
+paths:
+  /token:
+    post:
+      summary: Obtener token JWT
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                password:
+                  type: string
+              required: [username, password]
+      responses:
+        '200':
+          description: Token generado correctamente
+        '401':
+          description: Credenciales inválidas
+
+  /score:
+    post:
+      summary: Calcular score crediticio
+      servers:
+        - url: http://127.0.0.1:8001
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nombre:
+                  type: string
+                dni:
+                  type: string
+                ingresos_mensuales:
+                  type: number
+              required: [nombre, dni, ingresos_mensuales]
+      responses:
+        '200':
+          description: Score calculado correctamente
+
+  /generar-contrato:
+    post:
+      summary: Generar contrato en PDF
+      servers:
+        - url: http://localhost:8002
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                parte_a:
+                  type: string
+                dni:
+                  type: string
+                parte_b:
+                  type: string
+                fecha:
+                  type: string
+                contenido:
+                  type: array
+                  items:
+                    type: string
+              required: [parte_a, dni, parte_b, fecha, contenido]
+      responses:
+        '200':
+          description: Contrato generado exitosamente

@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "1a5529c5-753d-44a7-a98d-21ac7b9ac38a",
+		"name": "Gestion de Prestamos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37264479"
+	},
+	"item": [
+		{
+			"name": "Obtener el Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "anthony",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/token",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "score",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"Lucía Díaz\",\r\n  \"dni\": \"12345678\",\r\n  \"ingresos_mensuales\": 3200\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/score",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"score"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Generar pdf",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"parte_a\": \"Luis Gómez\",\r\n  \"dni\": \"12345678\",\r\n  \"parte_b\": \"Financiera XYZ\",\r\n  \"fecha\": \"29/07/2025\",\r\n  \"contenido\": [\r\n    \"PRIMERA: Objeto del contrato.\",\r\n    \"SEGUNDA: Duración del contrato.\",\r\n    \"TERCERA: Obligaciones de las partes.\",\r\n    \"CUARTA: Remuneración.\",\r\n    \"QUINTA: Confidencialidad.\"\r\n  ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/generar-contrato",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"generar-contrato"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener ruta pdf",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
