@@ -4,7 +4,7 @@
 Cacsire Sanchez, Jhosep Angel
 - Cliente
 Organización: Banco de credito del Peru
-# 2.Propodito del proyecto
+# 2.Proposito del proyecto
 El propósito de este proyecto es simular y replicar el proceso de solicitud de préstamo del Banco de Crédito del Perú (BCP) utilizando una arquitectura basada en microservicios. A través del modelado BPMN y la integración de diversas herramientas como BonitaSoft, Postman y FakeSMTP, se busca representar de manera realista el flujo completo del préstamo: desde la solicitud del cliente hasta la evaluación, aprobación y notificación del resultado.
 Este proyecto tiene como objetivo principal demostrar cómo se puede automatizar un proceso bancario real utilizando tecnologías modernas, promoviendo buenas prácticas en integración de servicios, orquestación de procesos y pruebas automatizadas.
 # 3.Visión General: Aplicación BPM (Application Page + Menú)
