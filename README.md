@@ -106,3 +106,6 @@ El proceso abarca todas las etapas que un cliente atraviesa al solicitar un cré
 📁 [Repositorio con archivo OpenAPI](openapi.yaml)
 # Microservicios
 ![Microservicios](imagen/uml.png)
+
+# OpenApi
+![openApi](imagen/open-api.png)
