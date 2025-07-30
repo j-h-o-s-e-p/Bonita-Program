@@ -87,7 +87,7 @@ El proceso abarca todas las etapas que un cliente atraviesa al solicitar un cré
 
 ## Diagrama BPMN del Proceso
 
-![Proceso BPMN - Solicitud de Préstamo](imagenes/flujo-solicitud.png)
+![Proceso BPMN - Solicitud de Préstamo](imagen/proceso.png)
 
 # Principales Servicios REST
 
@@ -103,5 +103,6 @@ El proceso abarca todas las etapas que un cliente atraviesa al solicitar un cré
   `POST /generar-contrato` – Genera PDF del contrato  
   **Parámetros:** JSON con `parte_a`, `parte_b`, `dni`, `fecha`, `contenido[]`
 
-📁 [Repositorio con archivo OpenAPI](URL_DE_TU_REPOSITORIO/openapi.yaml)
-
+📁 [Repositorio con archivo OpenAPI](openapi.yaml)
+# Microservicios
+![Microservicios](imagen/uml.png)
